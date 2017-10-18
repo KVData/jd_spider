@@ -63,7 +63,7 @@ class jd_spider(Spider):
         for good in goods:
             item1 = goodsItem()
             item1['ID'] = good.xpath('./div/@data-sku').extract()
-            item1['name'] = good.xpath('./div/div[@class="p-name"]/a/em/text()').extract()
+            item1['name'] = good.xpath('./div/div[@class="p-name"]/a/em/text()[last()]').extract()
             item1['shop_name'] = good.xpath('./div/div[@class="p-shop"]/@data-shop_name').extract()
             item1['link'] = good.xpath('./div/div[@class="p-img"]/a/@href').extract()
             url = "http:" + item1['link'][0] + "#comments-list"
