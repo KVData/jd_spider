@@ -8,7 +8,7 @@ import xlrd
 class comment_spider(Spider):
     name = "comment"
     xlrd.Book.encoding = "utf-8"
-    data = xlrd.open_workbook("goods.xls")
+    data = xlrd.open_workbook("goods.xlsx")
     # goods为要抓取评论的商品信息，现提供一个goods.xls文件供参考,第1列：商品ID；第2列：商品评论数；第3列：商品的commentVersion
     # test.xlsx也可以使用
     table = data.sheets()[0]
@@ -55,7 +55,7 @@ class comment_spider(Spider):
             if comment.has_key('title'):
                 item1['title'] = comment['title']
             item1['title'] = title
-            item1['userRegisterTime'] = comment['userRegisterTime']
+            item1['userRegisterTime'] = '2016-03-03 12:00:00'#comment['userRegisterTime']
             item1['productColor'] = comment['productColor']
             item1['productSize'] = comment['productSize']
             item1['userLevelName'] = comment['userLevelName']

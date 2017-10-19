@@ -54,7 +54,7 @@ COOKIES_ENABLED = False
 #     'jd_spider.middlewares.ProxyMiddleware': 100,
 # }
 
-DOWNLOAD_DELAY = 2  # 下载延迟
+DOWNLOAD_DELAY = 1  # 下载延迟
 
 LOG_LEVEL = 'INFO'
 
@@ -66,6 +66,6 @@ DB_PASSWD = ''  # 密码
 DB_DB = 'test_jd'  # 数据库名
 
 ITEM_PIPELINES = {
-    'jd_spider.pipelines.MySQLPipeline': 300,  # 抓取商品信息时，使用该通道
-    # 'jd_spider.pipelines.CommentPipeline': 300,  # 抓取评论信息时，使用该通道
+    #'jd_spider.pipelines.MySQLPipeline': 300,  # 抓取商品信息时，使用该通道
+     'jd_spider.pipelines.CommentPipeline': 300,  # 抓取评论信息时，使用该通道
 }
