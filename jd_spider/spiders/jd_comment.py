@@ -27,7 +27,7 @@ class comment_spider(Spider):
         else:
             page = comment_total/10 + 1
         for k in range(0, page):
-            url = "http://sclub.jd.com/productpage/p-" + str(good_num) + "-s-0-t-3-p-" + str(k) \
+            url = "http://club.jd.com/productpage/p-" + str(good_num) + "-s-0-t-3-p-" + str(k) \
                   + ".html?callback=fetchJSON_comment98vv" + str(comment_V[i])
             start_urls.append(url)
 
